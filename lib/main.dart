@@ -1,4 +1,5 @@
 import 'package:B3_OnlineCourceApp/constants.dart';
+import 'package:B3_OnlineCourceApp/detail.dart';
 import 'package:B3_OnlineCourceApp/model/category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Online Cource',
       theme: ThemeData(),
-      home: HomeScreen(),
+      home: DetailScreen(),
     );
   }
 }
