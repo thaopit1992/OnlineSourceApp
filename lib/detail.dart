@@ -24,10 +24,22 @@ class DetailScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      SvgPicture.asset("assets/icons/arrow-left.svg"),
-                      SvgPicture.asset("assets/icons/more-vertical.svg"),
+                      Container(
+                        child: InkWell(
+                          onTap: () {
+                              Navigator.pop(context);
+                          },
+                          child: SvgPicture.asset("assets/icons/arrow-left.svg"),
+                        ),
+                      ),
+                      Spacer(),
+                      Container(
+                        child: InkWell(
+                          onTap: () {},
+                          child: SvgPicture.asset('assets/icons/more-vertical.svg'),
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -180,10 +192,12 @@ class DetailScreen extends StatelessWidget {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(40),
                                     color: kBlueColor),
-                                child: Text("Buy Now", style: kSubtitleTextSyule.copyWith(
-                                  color:  Colors.white,
-                                  fontWeight: FontWeight.bold
-                                ),),
+                                child: Text(
+                                  "Buy Now",
+                                  style: kSubtitleTextSyule.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ],

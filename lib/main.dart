@@ -95,28 +95,37 @@ class HomeScreen extends StatelessWidget {
                     mainAxisSpacing: 20,
                     crossAxisCount: 2, // 2 cột
                     itemBuilder: (context, index) {
-                      return Container(
-                        padding: EdgeInsets.all(20),
-                        height: index.isEven ? 200 : 248,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          image: DecorationImage(
-                              image: AssetImage(categories[index].image),
-                              fit: BoxFit.fill), // full anh ra kich thuoc
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              categories[index].name,
-                              style: kTitleTextStyle,
-                            ),
-                            Text(
-                              '${categories[index].numOfCourses} Courses',
-                              style:
-                                  TextStyle(color: kTextColor.withOpacity(0.5)),
-                            ),
-                          ],
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DetailScreen()),
+                          );
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(20),
+                          height: index.isEven ? 200 : 248,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            image: DecorationImage(
+                                image: AssetImage(categories[index].image),
+                                fit: BoxFit.fill), // full anh ra kich thuoc
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                categories[index].name,
+                                style: kTitleTextStyle,
+                              ),
+                              Text(
+                                '${categories[index].numOfCourses} Courses',
+                                style: TextStyle(
+                                    color: kTextColor.withOpacity(0.5)),
+                              ),
+                            ],
+                          ),
                         ),
                       );
                     },
